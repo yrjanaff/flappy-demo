@@ -1,4 +1,4 @@
-package no.fraschetti.flyapydemo.states;
+package no.fraschetti.flappydemo.states;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
@@ -6,13 +6,13 @@ import java.util.Stack;
 
 public class GameStateManager {
 
-    private Stack<State> states;
+    private Stack<no.fraschetti.flappydemo.states.State> states;
 
     public GameStateManager() {
-        states = new Stack<State>();
+        states = new Stack<no.fraschetti.flappydemo.states.State>();
     }
 
-    public void push(State state) {
+    public void push(no.fraschetti.flappydemo.states.State state) {
         states.push(state);
     }
 

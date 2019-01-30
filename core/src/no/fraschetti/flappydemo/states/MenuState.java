@@ -1,4 +1,4 @@
-package no.fraschetti.flyapydemo.states;
+package no.fraschetti.flappydemo.states;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
@@ -6,9 +6,9 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
-import no.fraschetti.flyapydemo.FlappyDemo;
+import no.fraschetti.flappydemo.FlappyDemo;
 
-public class MenuState extends State{
+public class MenuState extends State {
 
     private Texture background;
     private Texture playBtn;
@@ -23,7 +23,7 @@ public class MenuState extends State{
     private static int TITLE_FONT_SZE = 140;
     private static int GAME_OVERT_FONT_SIZE = 92;
 
-    public MenuState(GameStateManager gsm) {
+    public MenuState(no.fraschetti.flappydemo.states.GameStateManager gsm) {
         super(gsm);
         setUp();
     }

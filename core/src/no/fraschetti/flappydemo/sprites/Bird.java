@@ -1,4 +1,4 @@
-package no.fraschetti.flyapydemo.sprites;
+package no.fraschetti.flappydemo.sprites;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.audio.Sound;

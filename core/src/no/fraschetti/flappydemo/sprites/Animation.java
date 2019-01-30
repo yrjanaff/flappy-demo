@@ -1,4 +1,4 @@
-package no.fraschetti.flyapydemo.sprites;
+package no.fraschetti.flappydemo.sprites;
 
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.utils.Array;

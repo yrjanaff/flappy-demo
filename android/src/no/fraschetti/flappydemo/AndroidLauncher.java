@@ -1,10 +1,9 @@
-package no.fraschetti.flyapydemo;
+package no.fraschetti.flappydemo;
 
 import android.os.Bundle;
 
 import com.badlogic.gdx.backends.android.AndroidApplication;
 import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration;
-import no.fraschetti.flyapydemo.FlappyDemo;
 
 public class AndroidLauncher extends AndroidApplication {
 	@Override

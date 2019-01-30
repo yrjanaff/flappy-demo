@@ -1,4 +1,4 @@
-package no.fraschetti.flyapydemo.sprites;
+package no.fraschetti.flappydemo.sprites;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Rectangle;

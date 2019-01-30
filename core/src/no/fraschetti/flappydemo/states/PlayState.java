@@ -1,13 +1,13 @@
-package no.fraschetti.flyapydemo.states;
+package no.fraschetti.flappydemo.states;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Array;
-import no.fraschetti.flyapydemo.FlappyDemo;
-import no.fraschetti.flyapydemo.sprites.Bird;
-import no.fraschetti.flyapydemo.sprites.Tube;
+import no.fraschetti.flappydemo.FlappyDemo;
+import no.fraschetti.flappydemo.sprites.Bird;
+import no.fraschetti.flappydemo.sprites.Tube;
 
 public class PlayState extends State {
 
@@ -15,26 +15,26 @@ public class PlayState extends State {
     private static final int TUBE_COINT = 4;
     private static final int GROUND_Y_OFFSET = -50;
 
-    private Bird bird;
+    private no.fraschetti.flappydemo.sprites.Bird bird;
     private Texture bg;
     private Texture ground;
     private Vector2 groundPos1, groundPos2;
 
-    private Array<Tube> tubes;
+    private Array<no.fraschetti.flappydemo.sprites.Tube> tubes;
 
     public PlayState(GameStateManager gsm) {
         super(gsm);
         bird = new Bird(50, 300);
-        cam.setToOrtho(false, FlappyDemo.WIDTH / 2, FlappyDemo.HEIGHT / 2);
+        cam.setToOrtho(false, no.fraschetti.flappydemo.FlappyDemo.WIDTH / 2, FlappyDemo.HEIGHT / 2);
         bg = new Texture("bg.png");
         ground = new Texture("ground.png");
         groundPos1 = new Vector2(cam.position.x - cam.viewportWidth / 2, GROUND_Y_OFFSET);
         groundPos2 = new Vector2((cam.position.x - cam.viewportWidth / 2) + ground.getWidth(), GROUND_Y_OFFSET);
 
-        tubes = new Array<Tube>();
+        tubes = new Array<no.fraschetti.flappydemo.sprites.Tube>();
 
         for(int i = 1; i <= TUBE_COINT; i++) {
-            tubes.add(new Tube(i * (TUBE_SPACING + Tube.TUBE_WIDTH)));
+            tubes.add(new no.fraschetti.flappydemo.sprites.Tube(i * (TUBE_SPACING + no.fraschetti.flappydemo.sprites.Tube.TUBE_WIDTH)));
         }
     }
 
@@ -52,9 +52,9 @@ public class PlayState extends State {
         bird.update(dt);
         cam.position.x = bird.getPosition().x + 80;
 
-        for(Tube tube : tubes) {
+        for(no.fraschetti.flappydemo.sprites.Tube tube : tubes) {
             if(cam.position.x - (cam.viewportWidth / 2) > tube.getPosTopTube().x + tube.getTopTube().getWidth()) {
-                tube.reposition(tube.getPosTopTube().x + ((Tube.TUBE_WIDTH + TUBE_SPACING) * TUBE_COINT));
+                tube.reposition(tube.getPosTopTube().x + ((no.fraschetti.flappydemo.sprites.Tube.TUBE_WIDTH + TUBE_SPACING) * TUBE_COINT));
             }
             if(tube.collides(bird.getBounds())) {
                 gameOver();//gsm.set(new PlayState(gsm));
@@ -74,7 +74,7 @@ public class PlayState extends State {
         sb.begin();
         sb.draw(bg, cam.position.x -(cam.viewportWidth / 2), 0);
         sb.draw(bird.getTexture(), bird.getPosition().x ,bird.getPosition().y);
-        for(Tube tube : tubes) {
+        for(no.fraschetti.flappydemo.sprites.Tube tube : tubes) {
             sb.draw(tube.getTopTube(), tube.getPosTopTube().x, tube.getPosTopTube().y);
             sb.draw(tube.getBottomTube(), tube.getPosBotTube().x, tube.getPosBotTube().y);
         }

@@ -1,4 +1,4 @@
-package no.fraschetti.flyapydemo.states;
+package no.fraschetti.flappydemo.states;
 
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;

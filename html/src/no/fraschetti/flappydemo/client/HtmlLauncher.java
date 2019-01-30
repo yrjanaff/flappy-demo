@@ -1,9 +1,9 @@
-package no.fraschetti.flyapydemo.client;
+package no.fraschetti.flappydemo.client;
 
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.backends.gwt.GwtApplication;
 import com.badlogic.gdx.backends.gwt.GwtApplicationConfiguration;
-import no.fraschetti.flyapydemo.FlappyDemo;
+import no.fraschetti.flappydemo.FlappyDemo;
 
 public class HtmlLauncher extends GwtApplication {
 
